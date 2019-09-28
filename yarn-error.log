@@ -1,0 +1,26 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn add react-navigation
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/adobe-air-sdk/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.9.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/home/yousef/AvalancheFrontend/node_modules/expo-cli/CHANGELOG.md'
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
