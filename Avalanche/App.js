@@ -28,7 +28,7 @@ const DebtStack = createStackNavigator({
 });
 DebtStack.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
-  if (navigation.state.routes.routeName == "Signin") {
+  if (navigation.state.index == 0) {
     tabBarVisible = false;
   }
 

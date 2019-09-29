@@ -2,17 +2,21 @@ import React, { Component } from 'react'
 import { FlatList, Platform, StyleSheet, Text, View} from 'react-native'
 import { Bar } from 'react-native-progress'
 export default class DebtCard extends Component{
+    constructor(props){
+        super(props);
+        const { navigation }= props
+    }
 	render(){
 		return(
 			<View style={styles.card}>
 			<Text style={{ color:'#7b1fa2',fontSize:20, fontWeight:'bold' }}>
-			Test Debt Header
+			{this.props.description}
 			</Text>
 			<Text style={{ margin:5, fontSize:18, fontWeight:'bold' }}>
-			Inital Balance: $1,000.00{'\n'}
-			Remaining Balance: $796.00{''}
+			Inital Balance: {this.props.initial}{'\n'}
+			Remaining Balance: {this.props.remaining}
 			</Text>
-			<Bar color={'#82b1ff'} progress={.3} height={10} width={null}></Bar>
+			<Bar color={'#82b1ff'} progress={this.props.remaining/this.props.initial} height={10} width={null}></Bar>
 			</View>
 
 	);
