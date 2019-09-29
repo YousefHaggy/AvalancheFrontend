@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { StyleSheet, View} from 'react-native'
-import DebtCard from './DebtCard'
-export default class DebtScreen extends Component{
+export default class SigninScreen extends Component{
 	render(){
 	return(
 		            <View style={styles.container}>
-		            <DebtCard></DebtCard>
+		            <Text></Text>
 		            </View>
 		);
 	}

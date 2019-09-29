@@ -15,7 +15,7 @@ const DebtStack = createStackNavigator({
             backgroundColor: '#7b1fa2'
         },
         headerTintColor: '#FFFFFF',
-        title: 'Locations',
+        title: 'Debts',
     }
 });
 const ProfileStack = createStackNavigator({
@@ -26,7 +26,7 @@ const ProfileStack = createStackNavigator({
             backgroundColor: '#7b1fa2'
         },
         headerTintColor: '#FFFFFF',
-        title: 'Locations',
+        title: 'Profile',
     }
 });
 
@@ -40,9 +40,9 @@ const App = createBottomTabNavigator({
             let IconComponent = Ionicons;
             let iconName;
             if (routeName == "Debts") {
-                iconName = `md-map`;
+                iconName = `md-card`;
             } else if (routeName == "Profile") {
-                iconName = 'md-cloud'
+                iconName = 'md-person'
             }
             return <IconComponent name={iconName} size={25} color={tintColor} />;
         },
