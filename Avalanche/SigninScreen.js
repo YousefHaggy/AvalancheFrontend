@@ -7,24 +7,31 @@ export default class SigninScreen extends Component {
     constructor(props) {
         super(props)
         this.state = { signedIn: false, name: "", id: 0 }
-    }
-    componentWillMount() {
-        BackHandler.addEventListener('hardwareBackPress', function() { return true })
+        this._onBack = this._onBack.bind(this)
 
+    }
+    _onBack() {
+        return true;
+    }
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this._onBack);
+
+    }
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this._onBack);
     }
     async createNewUser(id) {
         let response = await fetch('dasda');
         let responseJson = await response.json()
-        if (Objects.keys(responseJson).length==0)
-		{
-			fetch('',{
-				method:'POST',
-				body:JSON.stringify({
-					id:this.state.id
-				})
+        if (Objects.keys(responseJson).length == 0) {
+            fetch('', {
+                method: 'POST',
+                body: JSON.stringify({
+                    id: this.state.id
+                })
 
-			});
-		}
+            });
+        }
     }
     signIn = async () => {
         try {
@@ -42,7 +49,7 @@ export default class SigninScreen extends Component {
                 })
                 config.user.id = this.state.id;
                 config.user.name = this.state.name;
-               // this.createNewUser(this.state.id)
+                // this.createNewUser(this.state.id)
                 this.props.navigation.push('Debts', { name: this.state.name, id: this.state.id })
 
             } else {

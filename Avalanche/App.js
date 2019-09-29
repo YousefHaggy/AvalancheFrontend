@@ -7,34 +7,44 @@ import { createStackNavigator } from 'react-navigation-stack'
 import DebtScreen from './DebtScreen'
 import ProfileScreen from './ProfileScreen'
 import SigninScreen from './SigninScreen'
+import AddDebtScreen from './AddDebtScreen'
 
 
 const DebtStack = createStackNavigator({
-    Signin:  {screen :SigninScreen,navigationOptions: () => ({
-      title: `Sign in`,
-     
-    })} ,
-    Debts: {screen:DebtScreen} 
+    Signin: {
+        screen: SigninScreen,
+        navigationOptions: () => ({
+            title: `Sign in`,
+
+        })
+    },
+    Debts: {
+        screen: DebtScreen,
+        navigationOptions:() => ({
+            headerLeft: null,
+            gesturesEnabled: false,
+
+            title: 'Debts',
+        })
+    },
+    Add: { screen: AddDebtScreen }
 }, {
     defaultNavigationOptions: {
         headerStyle: {
             backgroundColor: '#7b1fa2'
         },
         headerTintColor: '#FFFFFF',
-        headerLeft:null,
-        gesturesEnabled:false,
-        title: 'Debts',
     }
 });
 DebtStack.navigationOptions = ({ navigation }) => {
-  let tabBarVisible = true;
-  if (navigation.state.index == 0) {
-    tabBarVisible = false;
-  }
+    let tabBarVisible = true;
+    if (navigation.state.index == 0) {
+        tabBarVisible = false;
+    }
 
-  return {
-    tabBarVisible,
-  };
+    return {
+        tabBarVisible,
+    };
 };
 const ProfileStack = createStackNavigator({
     Profile: { screen: ProfileScreen }
@@ -53,7 +63,7 @@ const App = createBottomTabNavigator({
     Profile: { screen: ProfileStack }
 }, {
     defaultNavigationOptions: ({ navigation }) => ({
-        
+
         tabBarIcon: ({ focused, horizontal, tintColor }) => {
 
             const { routeName } = navigation.state;
