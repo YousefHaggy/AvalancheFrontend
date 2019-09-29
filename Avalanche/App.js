@@ -8,6 +8,7 @@ import DebtScreen from './DebtScreen'
 import ProfileScreen from './ProfileScreen'
 import SigninScreen from './SigninScreen'
 import AddDebtScreen from './AddDebtScreen'
+import AddExpenseScreen from './AddExpenseScreen'
 
 
 const DebtStack = createStackNavigator({
@@ -47,7 +48,8 @@ DebtStack.navigationOptions = ({ navigation }) => {
     };
 };
 const ProfileStack = createStackNavigator({
-    Profile: { screen: ProfileScreen }
+    Profile: { screen: ProfileScreen },
+    Add:{screen: AddExpenseScreen }
 }, {
     defaultNavigationOptions: {
         headerStyle: {
