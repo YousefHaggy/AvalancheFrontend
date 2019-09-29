@@ -10,7 +10,6 @@ import SigninScreen from './SigninScreen'
 import AddDebtScreen from './AddDebtScreen'
 import AddExpenseScreen from './AddExpenseScreen'
 
-
 const DebtStack = createStackNavigator({
     Signin: {
         screen: SigninScreen,

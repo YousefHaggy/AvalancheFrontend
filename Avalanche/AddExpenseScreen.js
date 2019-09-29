@@ -28,7 +28,7 @@ export default class AddExpenseScreen extends Component{
       placeholder={"Enter expense amount"}
     />
 		           
-     <Button title="Add debt" onPress={()=>{this.props.navigation.state.params.onGoBack(this.state); this.props.navigation.goBack()}} color="#82b1ff" ></Button>
+     <Button title="Add Expense" onPress={()=>{this.props.navigation.state.params.onGoBack(this.state); this.props.navigation.goBack()}} color="#82b1ff" ></Button>
 		            </View>
 		);
 	}

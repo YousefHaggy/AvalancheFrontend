@@ -8,7 +8,7 @@ export default class ProfileScreen extends Component{
         super(props);
         const { navigation }= props
         this.state={
-        	expenses:[{category:"blah",amount:123}]
+        	expenses:[{category:"Rent",amount:1000}]
         }
     }
     addToExpenseList(item){

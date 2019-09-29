@@ -10,7 +10,7 @@ export default class ExpenseCard extends Component{
 		return(
 			<View style={styles.card}>
 			<Text style={{ color:'#7b1fa2',fontSize:20, fontWeight:'bold' }}>
-			{this.props.category}{", "}{this.props.amount}
+			{this.props.category}{", "}{"$"+this.props.amount}
 			</Text>
 			</View>
 

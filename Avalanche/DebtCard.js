@@ -13,10 +13,10 @@ export default class DebtCard extends Component{
 			{this.props.description}
 			</Text>
 			<Text style={{ margin:5, fontSize:18, fontWeight:'bold' }}>
-			Inital Balance: {this.props.initial}{'\n'}
+			Inital Balance: {"$"+this.props.initial}{'\n'}
 			Remaining Balance: {this.props.remaining}
 			</Text>
-			<Bar color={'#82b1ff'} progress={this.props.remaining/this.props.initial} height={10} width={null}></Bar>
+			<Bar color={'#82b1ff'} progress={(this.props.initial-this.props.remaining)/this.props.initial} height={10} width={null}></Bar>
 			</View>
 
 	);

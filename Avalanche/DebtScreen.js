@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, FlatList, BackHandler} from 'react-native'
+import { StyleSheet, View, FlatList, BackHandler, Button} from 'react-native'
 import DebtCard from './DebtCard'
 import config from './config/config'
 import ActionButton from 'react-native-action-button';
@@ -14,9 +14,13 @@ export default class DebtScreen extends Component{
 	addToDebtList(item){
 		this.state.debt.push({debtId:1212,debtDescription:item['name'],debtInitAmount:item["amount"],debtRemaining:item["amount"]});
 	}
+	generatePlan(){
+
+	}
 	render(){
 	return(
 		            <View style={styles.container}>
+		            		            <Button style={{margin:5}} title="Generate Payment Plan" onPress={()=>this.generatePlan()} color="#82b1ff" ></Button>
 
 		            <FlatList
 		            data={this.state.debt}
@@ -33,6 +37,7 @@ export default class DebtScreen extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding:5,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
   },
